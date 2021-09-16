@@ -10,6 +10,15 @@ const {
   checkLoginPayload,
 } = require('./auth-middleware.js');
 
+// GET /api/auth/users - get all users in database, used to test GET and to verify users are being added to database
+router.get('/', (req, res, next) => {
+  Auth.find()
+    .then(users => {
+      res.status(200).json(users);
+    })
+    .catch(next);
+});
+
 router.post('/register', checkPayload, checkUsernameUnique, (req, res, next) => {
   let user = req.body;
 
