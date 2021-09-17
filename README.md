@@ -12,7 +12,7 @@
 * heroku run --app <app_name>
 
 ## Endpoints (Development)
-	  http://localhost:3000/api/
+	http://localhost:3000/api/
   	http://localhost:5500/api/auth/register
   	http://localhost:5500/api/auth/login
   	http://localhost:5500/api/auth/logout  ** pending
@@ -24,33 +24,33 @@
 ## CRUD Operations
 
 ### Registration: 
-[POST]: /api/auth/register
+* [POST] /api/auth/register
 
 ### Login: 
-[POST]: /api/auth/login
+* [POST] /api/auth/login
 
 ### Logout: 
-[GET]: /api/auth/logout      
-* pending
+* [GET] /api/auth/logout      
+// pending
 
 ### Recipes: 
-[GET]: /api/recipes
+* [GET] /api/recipes
 
 ### Single Recipe: 
-[GET]: /api/recipes/:id
-* pending
+* [GET] /api/recipes/:id
+// pending
 
 ### Create Recipe: 
-[POST]: /api/recipes
-* pending
+* [POST] /api/recipes
+// pending
 
 ### Update Recipe: 
-[PUT]: /api/recipes/:id
-* pending
+* [PUT] /api/recipes/:id
+// pending
 
 ### Delete Recipe: 
-[DELETE] /api/recipes/:id
-* pending
+* [DELETE] /api/recipes/:id
+// pending
 
 ## Data Table Structures
 
