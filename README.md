@@ -34,22 +34,22 @@
 // pending
 
 ### Recipes: 
-* [GET] /api/recipes
+* [GET] /api/recipes       
 
 ### Single Recipe: 
-* [GET] /api/recipes/:id
+* [GET] /api/recipes/:id       
 // pending
 
 ### Create Recipe: 
-* [POST] /api/recipes
+* [POST] /api/recipes       
 // pending
 
 ### Update Recipe: 
-* [PUT] /api/recipes/:id
+* [PUT] /api/recipes/:id       
 // pending
 
 ### Delete Recipe: 
-* [DELETE] /api/recipes/:id
+* [DELETE] /api/recipes/:id       
 // pending
 
 ## Data Table Structures
