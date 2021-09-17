@@ -14,7 +14,7 @@ exports.up = async function(knex) {
       tbl.increments('recipe_id');
       tbl.string('recipe_title', 128).notNullable();
       tbl.string('recipe_source', 128).notNullable();
-      tbl.string('image', 128).notNullable();
+      tbl.string('image', 128);
       tbl.integer('user_id')
         .unsigned()
         .notNullable()
@@ -45,7 +45,7 @@ exports.up = async function(knex) {
     .createTable('ingredients', tbl => {
       tbl.increments('ingredient_id');
       tbl.string('ingredient_name', 128).notNullable();
-      tbl.string('ingredient_unit', 50).notNullable();
+      tbl.string('ingredient_unit', 50);
     })
     .createTable('instruction_ingredients', tbl => {
       tbl.increments('instruction_ingredient_id');
