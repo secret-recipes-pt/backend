@@ -43,44 +43,22 @@ Delete Recipe: [DELETE] /api/recipes/:id  // pending
 	}
 
 `Recipe Object` 
-  { 
+  `{ 
     recipe_id: integer, 
     recipe_title: string,       // required
     recipe_source: string,      // required
     image: string,              // not required, can use an image url
     user_id: integer,           // this references the id in the users table 
     category_id: integer        // this references the id in the categories table
-	}
+	}`
 
 ## Category Array
-Categories = [ 
-	{ 
-		category_id: 1, 
-		category_name: Breakfast and Brunch Recipes
-	},
-	{ 
-		category_id: 2, 
-		category_name: Appetizer/Snack Recipes
-	},
-	{ 
-		category_id: 3, 
-		category_name: Main Dish Recipes
-	},	
-	{ 
-		category_id: 4, 
-		category_name: Salad Recipes
-	},
-	{ 
-		category_id: 5, 
-		category_name: Dessert Recipes
-
-	},
-	{ 
-		category_id: 6, 
-		category_name: Healthy Recipes
-	},
-	{ 
-		category_id: 7, 
-		category_name: World Cuisine
-	}
+const categories = [ 
+	{ category_id: 1, category_name: Breakfast and Brunch Recipes},
+	{ category_id: 2, category_name: Appetizer/Snack Recipes },
+	{ category_id: 3, category_name: Main Dish Recipes },	
+	{ category_id: 4, category_name: Salad Recipes},
+	{ category_id: 5, category_name: Dessert Recipes },
+	{ category_id: 6, category_name: Healthy Recipes},
+	{ category_id: 7, category_name: World Cuisine }
 ]
