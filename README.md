@@ -18,31 +18,45 @@ http://localhost:5500/api/auth/login
 http://localhost:5500/api/auth/logout  // pending
 http://localhost:5500/api/recipes      // pending
 
-## Endpoints (Production) // Heroku
+### Endpoints (Production) // Heroku
 // pending //
 
-## CRUD Operations
+### CRUD Operations
 
-Registration: [POST] /api/auth/register
-Login: [POST] /api/auth/login
-Logout: [GET] /api/auth/logout           // pending
+## Registration: 
+[POST] /api/auth/register
 
-Recipes: [GET] /api/recipes
-Single Recipe: [GET] /api/recipes/:id     // pending
-Create Recipe: [POST] /api/recipes        // pending
-Update Recipe: [PUT] /api/recipes/:id     // pending
-Delete Recipe: [DELETE] /api/recipes/:id  // pending
+## Login: 
+[POST] /api/auth/login
 
-## Data Table Structures
+## Logout: 
+[GET] /api/auth/logout      // pending
 
-`User Object`  
+** Recipes: 
+[GET] /api/recipes
+
+** Single Recipe: 
+[GET] /api/recipes/:id     // pending
+
+** Create Recipe: 
+[POST] /api/recipes        // pending
+
+** Update Recipe: 
+[PUT] /api/recipes/:id     // pending
+
+** Delete Recipe: 
+[DELETE] /api/recipes/:id  // pending
+
+### Data Table Structures
+
+## User Object  
   `{ 
     user_id: integer, 
     username: string,  // required, must be unique
     password: string  // required
 	}`
 
-`Recipe Object` 
+## Recipe Object
   `{ 
     recipe_id: integer, 
     recipe_title: string,       // required
