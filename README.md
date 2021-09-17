@@ -43,7 +43,6 @@ Delete Recipe: [DELETE] /api/recipes/:id  // pending
 	}`
 
 `Recipe Object` 
-
   `{ 
     recipe_id: integer, 
     recipe_title: string,       // required
