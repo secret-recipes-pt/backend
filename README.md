@@ -1,8 +1,10 @@
 # backend
 
 ## Dependencies
+* pending
 
 ## Development Dependencies
+* pending
 
 ## Heroku CLI Commands
 * heroku login 
