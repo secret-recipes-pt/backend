@@ -5,58 +5,58 @@
 ## Development Dependencies
 
 ## Heroku CLI Commands
-heroku login 
-heroku apps:create 
-heroku addons:create 
-heroku logs --tail -a <app_name> 
-heroku run --app <app_name>
+* heroku login 
+* heroku apps:create 
+* heroku addons:create 
+* heroku logs --tail -a <app_name> 
+* heroku run --app <app_name>
 
 ## Endpoints (Development)
-http://localhost:3000/api/
-http://localhost:5500/api/auth/register
-http://localhost:5500/api/auth/login
-http://localhost:5500/api/auth/logout  // pending
-http://localhost:5500/api/recipes      // pending
+		http://localhost:3000/api/
+  	http://localhost:5500/api/auth/register
+  	http://localhost:5500/api/auth/login
+  	http://localhost:5500/api/auth/logout  // pending
+  	http://localhost:5500/api/recipes      // pending
 
-### Endpoints (Production) // Heroku
+## Endpoints (Production) // Heroku
 // pending //
 
-### CRUD Operations
+## CRUD Operations
 
-## Registration: 
+### Registration: 
 [POST] /api/auth/register
 
-## Login: 
+### Login: 
 [POST] /api/auth/login
 
-## Logout: 
+### Logout: 
 [GET] /api/auth/logout      // pending
 
-** Recipes: 
+### Recipes: 
 [GET] /api/recipes
 
-** Single Recipe: 
+### Single Recipe: 
 [GET] /api/recipes/:id     // pending
 
-** Create Recipe: 
+### Create Recipe: 
 [POST] /api/recipes        // pending
 
-** Update Recipe: 
+### Update Recipe: 
 [PUT] /api/recipes/:id     // pending
 
-** Delete Recipe: 
+### Delete Recipe: 
 [DELETE] /api/recipes/:id  // pending
 
-### Data Table Structures
+## Data Table Structures
 
-## User Object  
+### User Object  
   `{ 
     user_id: integer, 
     username: string,  // required, must be unique
     password: string  // required
 	}`
 
-## Recipe Object
+### Recipe Object
   `{ 
     recipe_id: integer, 
     recipe_title: string,       // required
@@ -66,7 +66,7 @@ http://localhost:5500/api/recipes      // pending
     category_id: integer        // this references the id in the categories table
 	}`
 
-## Category Array
+### Category Object Array
 `Categories = [ 
 	{ category_id: 1, category_name: Breakfast and Brunch Recipes},
 	{ category_id: 2, category_name: Appetizer/Snack Recipes },
