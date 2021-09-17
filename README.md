@@ -36,13 +36,14 @@ Delete Recipe: [DELETE] /api/recipes/:id  // pending
 ## Data Table Structures
 
 `User Object`  
-  { 
+  `{ 
     user_id: integer, 
     username: string,  // required, must be unique
     password: string  // required
-	}
+	}`
 
 `Recipe Object` 
+
   `{ 
     recipe_id: integer, 
     recipe_title: string,       // required
@@ -53,7 +54,7 @@ Delete Recipe: [DELETE] /api/recipes/:id  // pending
 	}`
 
 ## Category Array
-const categories = [ 
+`Categories = [ 
 	{ category_id: 1, category_name: Breakfast and Brunch Recipes},
 	{ category_id: 2, category_name: Appetizer/Snack Recipes },
 	{ category_id: 3, category_name: Main Dish Recipes },	
@@ -61,4 +62,4 @@ const categories = [
 	{ category_id: 5, category_name: Dessert Recipes },
 	{ category_id: 6, category_name: Healthy Recipes},
 	{ category_id: 7, category_name: World Cuisine }
-]
+]`
