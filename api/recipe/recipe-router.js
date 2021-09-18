@@ -59,10 +59,10 @@ router.post('/:user_id', restricted, checkPayload, async (req, res, next) => {
   // });
 });
 
-router.put('/:id', restricted, checkRecipeId, checkPayload, (req, res) => {
+router.put('/:recipe_id', restricted, checkRecipeId, checkPayload, (req, res) => {
   const changes = req.body;
 
-  Recipe.update(req.params.id, changes)
+  Recipe.update(req.params.recipe_id, changes)
     .then(updated => {
       res.status(200).json(updated);
     })
@@ -74,7 +74,7 @@ router.put('/:id', restricted, checkRecipeId, checkPayload, (req, res) => {
   });
 });
 
-router.delete('/:id', restricted, checkRecipeId, (req, res) => {
+router.delete('/:recipe_id', restricted, checkRecipeId, (req, res) => {
   Recipe.remove(req.params.id)
     .then(deleted => {
       res.status(200).json(deleted);

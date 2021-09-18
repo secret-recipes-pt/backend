@@ -53,7 +53,7 @@ router.post('/login', checkPayload, checkLoginPayload, (req, res, next) => {
 
 router.post('/logout', async (req, res, next) => {
   try {
-    const user = await Auth.findById(req.body.user_id);
+    const user = await Auth.findById(req.params.user_id);
     const token = req.headers.authorization;
     const decoded = jwt.verify(token, JWT_SECRET);
     // const user = await Auth.findById(decoded.subject);
