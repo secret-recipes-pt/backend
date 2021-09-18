@@ -2,7 +2,7 @@
 
 ## Dependencies
 	* Bcryptjs
-      	npm i bcryptjs
+      		npm i bcryptjs
 	* CORS
 		  	npm i cors
     * DOTENV
