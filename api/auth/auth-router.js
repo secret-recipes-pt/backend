@@ -53,13 +53,13 @@ router.post('/login', checkPayload, checkLoginPayload, (req, res, next) => {
 
 router.post('/logout', async (req, res, next) => {
   try {
-    const user = await Auth.findById(req.params.user_id);
+    // const user = await Auth.findById(req.params.user_id);
     const token = req.headers.authorization;
     const decoded = jwt.verify(token, JWT_SECRET);
-    // const user = await Auth.findById(decoded.subject);
-    user.tokens = user.tokens.filter(token => token.token !== decoded.token);
+    const user = await Auth.findById(decoded.subject);
+    // user.tokens = user.tokens.filter(token => token.token !== decoded.token);
 
-    // user.token = null;
+    user.token = null;
     await user.save();
     res.status(200).json({ message: 'Successfully logged out' });
   } catch (err) {
