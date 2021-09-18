@@ -8,7 +8,8 @@ function findBy(filter) {
   console.log(filter);
   console.log("in the findBy model")
   return db('users')
-    .where(filter);
+    .where(filter)
+    .first();
 }
 
 function findById(user_id) {

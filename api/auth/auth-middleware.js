@@ -48,6 +48,7 @@ async function checkLoginPayload(req, res, next) {
     const rows = await Auth.findBy({ username: user.username });
     if (rows) {
       req.userData = rows;
+      console.log(rows);
       next();
     } else if (!rows || user.password !== rows.password) {
       return res.status(400).json({ message: 'Invalid credentials!' });

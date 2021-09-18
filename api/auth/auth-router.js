@@ -35,7 +35,7 @@ router.post('/register', checkPayload, checkUsernameUnique, (req, res, next) => 
 });
 
 router.post('/login', checkPayload, checkLoginPayload, (req, res, next) => {
-  const verifiedUser = bcrypt.compareSync(req.body.password, req.userData.password);
+  let verifiedUser = bcrypt.compareSync(req.body.password, req.userData.password);
 
   if (verifiedUser) {
     const token = generateToken(req.userData);
