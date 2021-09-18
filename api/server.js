@@ -1,4 +1,3 @@
-// server code goes here, need to require it in index.js
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');

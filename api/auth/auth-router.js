@@ -1,4 +1,3 @@
-// build user router here
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
@@ -70,28 +69,6 @@ router.post('/logout', async (req, res, next) => {
     next(error);
   }
 });  
-
-  //   const user = await Auth.findById(decoded.subject.user_id);
-
-  //   user.token = null;
-  //   await user.save();
-  //   res.status(200).json({ message: 'Successfully logged out' });
-  // } catch (err) {
-  //   next(err);
-    // res.status(500).json({ message: 'Failed to log out' });
-  // }
-  // try {
-  //   req.session.destroy((err) => {
-  //     if (err) {
-  //       next(err)
-  //     } else {
-  //       res.status(204).end();
-  //     }
-  //   });
-  // } catch (err) {
-  //   next(err);
-  // }
-// });
 
 function generateToken(user) {
   const payload = {

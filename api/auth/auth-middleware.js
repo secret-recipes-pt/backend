@@ -5,18 +5,18 @@ const { JWT_SECRET } = require('./secrets/secrets.js');
 const restricted = (req, res, next) =>{
   const token = req.headers.authorization
   if (!token){
-      res.status(401).json({message: "Token required; user is not authorized!"})
+    res.status(401).json({message: "Token required; user is not authorized!"})
   } 
   else{
-      jwt.verify(token, JWT_SECRET, (err, decoded) =>{
-          if (err){
-              res.status(401).json({message: "Token invalid! You shall not pass!"})
-          }
-          else {
-              req.decodedToken = decoded
-              next()
-          }
-      })
+    jwt.verify(token, JWT_SECRET, (err, decoded) =>{
+      if (err){
+        res.status(401).json({message: "Token invalid! You shall not pass!"})
+      }
+      else {
+        req.decodedToken = decoded
+        next()
+      }
+    })
   }
 }
 
