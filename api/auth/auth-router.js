@@ -53,7 +53,7 @@ router.post('/login', checkPayload, checkLoginPayload, (req, res, next) => {
 
 router.post('/logout', async (req, res, next) => {
   try {
-    const token = req.headers.authorization.split(' ')[1];
+    const token = req.headers.authorization;
     const decoded = jwt.verify(token, JWT_SECRET);
     const user = await Auth.findById(decoded.subject);
     user.token = null;
