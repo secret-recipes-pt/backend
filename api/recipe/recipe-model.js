@@ -9,7 +9,8 @@ module.exports = {
 };
 
 function find() {
-  return db('recipes');
+  return db('recipes')
+    .orderBy('recipe_id', 'asc');
 }
 
 function findById(recipe_id) {
