@@ -32,7 +32,7 @@ function checkPayload(req, res, next) {
 async function checkUsernameUnique(req, res, next) {
   try {
     const rows = await Auth.findBy({ username: req.body.username });
-    if (rows.length === 0) {
+    if (!rows) {
       next();
     } else {
       return res.status(400).json({ message: 'Username already exists' });
