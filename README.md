@@ -95,16 +95,16 @@
 	}`
 
 ### Recipe Object
-  `{ 
-    recipe_id: integer, 
-    recipe_title: string,       ** required
-    recipe_source: string,      ** required
-    image: string,              ** not required, can use an image url
-		ingredients: string,        ** required
-		instructions: string,       ** required
-    user_id: integer,           ** this references the id in the users table 
-    category_id: integer        ** this references the id in the categories table
-	}`
+  { 
+			recipe_id: integer,
+			recipe_title: string,       ** required
+			recipe_source: string,      ** required
+			image: string,              ** not required, can use an image url
+			ingredients: string,        ** required
+			instructions: string,       ** required
+			user_id: integer,           ** this references the id in the users table 
+			category_id: integer        ** this references the id in the categories table
+	}
 
 ### Category Object Array
 `Categories = [ 
