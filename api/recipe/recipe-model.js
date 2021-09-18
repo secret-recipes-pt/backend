@@ -19,8 +19,8 @@ function findById(recipe_id) {
     .first();
 }
 
-async function add(recipe, user_id) {
-  const [id] = await db('recipes').insert(recipe, 'recipe_id', { user_id });
+async function add(recipe) {
+  const [id] = await db('recipes').insert(recipe, 'recipe_id');
 
   return findById(id);
 }
