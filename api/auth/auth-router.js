@@ -56,13 +56,23 @@ router.post('/logout', async (req, res, next) => {
     // const user = await Auth.findById(req.params.user_id);
     const token = req.headers.authorization;
     const decoded = jwt.verify(token, JWT_SECRET);
-    const user = await Auth.findById(decoded.subject.user_id);
+    if (decoded) {
+      req.headers.authorization = null;
+      res.status(200).json({
+        message: 'Logout successful'
+      });
+    } else {
+      res.status(401).json({
+        message: 'Invalid token'
+      });
+    }
+  //   const user = await Auth.findById(decoded.subject.user_id);
 
-    user.token = null;
-    await user.save();
-    res.status(200).json({ message: 'Successfully logged out' });
-  } catch (err) {
-    next(err);
+  //   user.token = null;
+  //   await user.save();
+  //   res.status(200).json({ message: 'Successfully logged out' });
+  // } catch (err) {
+  //   next(err);
     // res.status(500).json({ message: 'Failed to log out' });
   }
   // try {
