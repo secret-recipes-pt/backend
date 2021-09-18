@@ -16,7 +16,10 @@ router.get('/', restricted, (req, res) => {
   });
 });
 
-router.post('/:user_id', restricted, checkPayload, (req, res, next) => {
+router.post('/:user_id', restricted, checkPayload, async (req, res, next) => {
+  try {
+    const recipe = await Recipe.add(req.body);
+
   const { user_id } = req.params;
   const { recipe_title, recipe_source, image, category_id } = req.body;
   const newRecipe = {
