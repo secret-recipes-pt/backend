@@ -5,7 +5,6 @@ const helmet = require('helmet');
 const server = express();
 
 // building out routes
-const restrict = require('./auth/auth-middleware.js')
 const authRouter = require('./auth/auth-router.js');
 const recipesRouter = require('./recipe/recipe-router.js');
 
@@ -13,8 +12,8 @@ server.use(express.json());
 server.use(helmet());
 server.use(cors());
 
-server.use('/api/recipes', restrict, recipesRouter);
-server.use('/api/auth', restrict, authRouter);
+server.use('/api/recipes', recipesRouter);
+server.use('/api/auth', authRouter);
 
 server.get('/', (req, res) => {
   res.json({ api: 'API is UP!' });

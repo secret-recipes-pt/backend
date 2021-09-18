@@ -1,8 +1,9 @@
 //build recipe router here
 const router = require('express').Router();
 const Recipe = require('./recipe-model.js');
+const { restricted } = require('../recipe/recipe-middleware.js');
 
-router.get('/', (req, res) => {
+router.get('/', restricted, (req, res) => {
   Recipe.find(req.query)
     .then(recipes => {
       res.status(200).json(recipes);
