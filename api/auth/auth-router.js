@@ -52,30 +52,29 @@ router.post('/login', checkPayload, checkLoginPayload, (req, res, next) => {
 });
 
 router.post('/logout', async (req, res, next) => {
+//   try {
+//     const token = req.headers.authorization;
+//     const decoded = jwt.verify(token, JWT_SECRET);
+//     const user = await Auth.findById(decoded.subject);
+//     user.token = null;
+//     await user.save();
+//     res.status(200).json({ message: 'Successfully logged out' });
+//   } catch (err) {
+//     next(err);
+//     // res.status(500).json({ message: 'Failed to log out' });
+//   }
   try {
-    const token = req.headers.authorization;
-    const decoded = jwt.verify(token, JWT_SECRET);
-    const user = await Auth.findById(decoded.subject);
-    user.token = null;
-    await user.save();
-    res.status(200).json({ message: 'Successfully logged out' });
+    req.session.destroy((err) => {
+      if (err) {
+        next(err)
+      } else {
+        res.status(204).end();
+      }
+    });
   } catch (err) {
     next(err);
-    // res.status(500).json({ message: 'Failed to log out' });
   }
 });
-
-    // req.session.destroy((err) => {
-    //   if (err) {
-    //     next(err)
-    //   } else {
-    //     res.status(204).end();
-    //   }
-    // });
-  // } catch (err) {
-  //   next(err);
-  // }
-// });
 
 function generateToken(user) {
   const payload = {
