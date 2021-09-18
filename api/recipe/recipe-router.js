@@ -1,7 +1,7 @@
 //build recipe router here
 const router = require('express').Router();
 const Recipe = require('./recipe-model.js');
-const { restricted } = require('../recipe/recipe-middleware.js');
+const { restricted, checkRecipeId, checkPayload, } = require('../recipe/recipe-middleware.js');
 
 router.get('/', restricted, (req, res) => {
   Recipe.find(req.query)
@@ -11,6 +11,29 @@ router.get('/', restricted, (req, res) => {
     .catch(err => {
       res.status(500).json({
         message: 'Error retrieving recipes',
+        error: err
+    });
+  });
+});
+
+router.post('/:user_id', restricted, checkPayload, (req, res, next) => {
+  const { user_id } = req.params;
+  const { recipe_title, recipe_source, image, category_id } = req.body;
+  const newRecipe = {
+    recipe_title,
+    recipe_source,
+    image,
+    category_id,
+    user_id
+  };
+  Recipe.add(newRecipe)
+    .then(recipe => {
+      res.status(201).json(recipe);
+      next();
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: 'Error adding recipe',
         error: err
     });
   });
