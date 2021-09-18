@@ -31,10 +31,8 @@ function remove(recipe_id) {
     .del();
 }
 
-async function update(recipe_id, changes) {
-  const [id] = await db('recipes')
+function update(recipe_id, changes) {
+  return db('recipes')
     .where({ recipe_id })
     .update(changes);
-
-  return findById(id);
 }
