@@ -66,6 +66,10 @@ router.post('/logout', async (req, res, next) => {
         message: 'Invalid token'
       });
     }
+  } catch (error) {
+    next(error);
+  }
+  
   //   const user = await Auth.findById(decoded.subject.user_id);
 
   //   user.token = null;
