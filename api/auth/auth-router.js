@@ -5,13 +5,14 @@ const bcrypt = require('bcryptjs');
 const Auth = require('./auth-model.js');
 const { JWT_SECRET } = require('../auth/secrets/secrets.js');
 const { 
+  restricted,
   checkPayload,
   checkUsernameUnique,
   checkLoginPayload,
 } = require('./auth-middleware.js');
 
-// GET /api/auth/users - get all users in database, used to test GET and to verify users are being added to database
-router.get('/', (req, res, next) => {
+// GET /api/auth/users - get all users in database, used to test GET and to verify users are being added to database correctly -- will only work if user is authorized and token is valid
+router.get('/', restricted, (req, res, next) => {
   Auth.find()
     .then(users => {
       res.status(200).json(users);

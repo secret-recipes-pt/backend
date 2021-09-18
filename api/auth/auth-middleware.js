@@ -1,4 +1,24 @@
 const Auth = require('./auth-model.js');
+const jwt = require('jsonwebtoken');
+const { JWT_SECRET } = require('./secrets/secrets.js');
+
+const restricted = (req, res, next) =>{
+  const token = req.headers.authorization
+  if (!token){
+      res.staus(401).json({message: "Token required; user is not authorized!"})
+  } 
+  else{
+      jwt.verify(token, JWT_SECRET, (err, decoded) =>{
+          if (err){
+              res.status(401).json({message: "Token invalid! You shall not pass!"})
+          }
+          else {
+              req.decodedToken = decoded
+              next()
+          }
+      })
+  }
+}
 
 function checkPayload(req, res, next) {
   const user = req.body;
@@ -38,6 +58,7 @@ async function checkLoginPayload(req, res, next) {
 }
 
 module.exports = {
+  restricted,
   checkPayload,
   checkUsernameUnique,
   checkLoginPayload,
