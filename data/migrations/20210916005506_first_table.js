@@ -14,7 +14,7 @@ exports.up = async function(knex) {
       tbl.increments('recipe_id');
       tbl.string('recipe_title', 128).notNullable();
       tbl.string('recipe_source', 128).notNullable();
-      tbl.string('image', 128);
+      tbl.string('image', 455);
       tbl.integer('user_id')
         .unsigned()
         .notNullable()
