@@ -69,7 +69,8 @@ router.post('/logout', async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-  
+});  
+
   //   const user = await Auth.findById(decoded.subject.user_id);
 
   //   user.token = null;
@@ -78,7 +79,7 @@ router.post('/logout', async (req, res, next) => {
   // } catch (err) {
   //   next(err);
     // res.status(500).json({ message: 'Failed to log out' });
-  }
+  // }
   // try {
   //   req.session.destroy((err) => {
   //     if (err) {
@@ -90,7 +91,7 @@ router.post('/logout', async (req, res, next) => {
   // } catch (err) {
   //   next(err);
   // }
-});
+// });
 
 function generateToken(user) {
   const payload = {
