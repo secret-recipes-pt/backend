@@ -32,7 +32,6 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
     "knex": "^0.95.11",
@@ -45,6 +44,7 @@
     "eslint": "^7.32.0",
     "jest": "^27.2.0",
     "morgan": "^1.10.0",
+    "helmet": "^4.6.0",
     "nodemon": "^2.0.12"
   }
 }

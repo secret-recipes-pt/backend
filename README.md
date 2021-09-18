@@ -1,17 +1,49 @@
 # backend
 
 ## Dependencies
-* pending
+	  * Bcryptjs
+      	npm i bcryptjs
+		* CORS
+		  	npm i cors
+    * DOTENV
+		  	npm i dotenv
+    * Express
+		  	npm i express
+    * Express-session
+		  	npm i express-session
+    * JSONWEBTOKEN
+		  	npm i jsonwebtoken
+    * JWT-DECODE
+		  	npm i jwt-decode
+    * Knex
+				npm i knex
+		* Connect-session-knex
+				npm i connect-session-knex
+    * Postgres
+		  	brew install postgres
 
 ## Development Dependencies
-* pending
+		* Cross-env
+				npm i cross-env
+		* Nodemon
+			  npm i nodemon
+		* ESLint
+				npm i eslint
+		* Jest
+				npm i jest
+		* @types/jest
+				npm i @types/jest
+		* Morgan
+				npm i morgan
+		* Helmet
+				npm i helmet
 
 ## Heroku CLI Commands
 * heroku login 
 * heroku apps:create 
 * heroku addons:create 
-* heroku logs --tail -a <app_name> 
-* heroku run --app <app_name>
+* heroku logs --tail -a secret-recipes-4 
+* heroku run --app secret-recipes-4
 
 ## Endpoints (Development)
 	http://localhost:3000/api/
@@ -21,7 +53,11 @@
   	http://localhost:5500/api/recipes      ** pending
 
 ## Endpoints (Production) // Heroku
-* pending 
+	https://secret-recipes-4.herokuapp.com/api/auth/register
+	https://secret-recipes-4.herokuapp.com/api/auth/login
+	https://secret-recipes-4.herokuapp.com/api/auth/logout
+	https://secret-recipes-4.herokuapp.com/api/recipes/
+	https://secret-recipes-4.herokuapp.com/api/recipes/{recipe_id} ** for specific recipe
 
 ## CRUD Operations
 
@@ -33,26 +69,21 @@
 
 ### Logout: 
 * [GET] /api/auth/logout      
-// pending
 
 ### Recipes: 
 * [GET] /api/recipes       
 
 ### Single Recipe: 
 * [GET] /api/recipes/:id       
-// pending
 
 ### Create Recipe: 
 * [POST] /api/recipes       
-// pending
 
 ### Update Recipe: 
 * [PUT] /api/recipes/:id       
-// pending
 
 ### Delete Recipe: 
 * [DELETE] /api/recipes/:id       
-// pending
 
 ## Data Table Structures
 
