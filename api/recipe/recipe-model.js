@@ -76,15 +76,20 @@ async function findById(recipe_id) {
         }
       }
     })
-
+    // if (!recipeInfo.instruction_id || !recipeInfo.ingredient_id) {
+    //   return db('recipes')
+    //     .where({ recipe_id })
+    //     .first();
+    // } else {
     return recipeResult;
+    // }
 
 }
 
 async function add(recipe) {
-  const [id] = await db('recipes').insert(recipe, 'recipe_id');
+  const [id] = await db('recipes').insert(recipe).returning('recipe_id');
 
-  return findById(id);
+  return id;
 }
 
 function remove(recipe_id) {
