@@ -31,8 +31,10 @@ router.get('/:recipe_id', restricted, checkRecipeId, (req, res) => {
 
 router.post('/:user_id', restricted, checkPayload, async (req, res, next) => {
   try {
-    const recipe = await Recipe.add(req.body);
-    res.status(201).json(recipe);
+    const newRecipe = await Recipe.add(req.body);
+    newRecipe.user_id = req.params.user_id;
+    // const recipe = await Recipe.add(req.body);
+    res.status(201).json(newRecipe);
   } catch (err) {
     next(err);
   }
