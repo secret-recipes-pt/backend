@@ -12,9 +12,9 @@ exports.up = async function(knex) {
     })
     .createTable('recipes', tbl => {
       tbl.increments('recipe_id');
-      tbl.string('recipe_title', 128).notNullable();
-      tbl.string('recipe_source', 128).notNullable();
-      tbl.string('image', 455);
+      tbl.string('recipe_title', 355).notNullable();
+      tbl.string('recipe_source', 355).notNullable();
+      tbl.string('image', 955);
       tbl.integer('user_id')
         .unsigned()
         .notNullable()

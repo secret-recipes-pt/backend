@@ -38,19 +38,10 @@ router.post('/login', checkPayload, checkLoginPayload, (req, res, next) => {
   let verifiedUser = bcrypt.compareSync(req.body.password, req.userData.password);
 
   if (verifiedUser) {
-    const token = jwt.sign({
-      subject: req.userData.user_id,
-      username: req.userData.username
-    }, JWT_SECRET, {expiresIn: '1d'});
-    // generateToken(req.userData);
-    
-    res.cookie("token", token)
-    console.log("passed the cookie")
-
+    const token = generateToken(req.userData);
     res.status(200).json({
       message: `Welcome ${req.userData.username}!`,
-      token: token,
-      user: req.userData
+      token,
     });
     next();
   } else {
@@ -61,28 +52,31 @@ router.post('/login', checkPayload, checkLoginPayload, (req, res, next) => {
 });
 
 router.post('/logout', async (req, res, next) => {
-  // try {
-  //   const token = req.headers.authorization[0];
-  //   const decoded = jwt.verify(token, JWT_SECRET);
-  //   const user = await Auth.findById(decoded.subject);
-  //   user.token = null;
-  //   await user.save();
-    // res.status(200).json({ message: 'Successfully logged out' });
-  // } catch (err) {
-  //   next(err);
-    // res.status(500).json({ message: 'Failed to log out' });
-  // }
   try {
-    req.session.destroy((err) => {
-      if (err) {
-        next(err)
-      } else {
-        res.status(204).end();
-      }
-    });
+    const user = await Auth.findById(req.userData.user_id);
+    const token = req.headers.authorization;
+    const decoded = jwt.verify(token, JWT_SECRET);
+    // const user = await Auth.findById(decoded.subject);
+    user.tokens = user.tokens.filter(token => token.token !== decoded.token);
+    
+    // user.token = null;
+    await user.save();
+    res.status(200).json({ message: 'Successfully logged out' });
   } catch (err) {
     next(err);
+    // res.status(500).json({ message: 'Failed to log out' });
   }
+  // try {
+  //   req.session.destroy((err) => {
+  //     if (err) {
+  //       next(err)
+  //     } else {
+  //       res.status(204).end();
+  //     }
+  //   });
+  // } catch (err) {
+  //   next(err);
+  // }
 });
 
 function generateToken(user) {
