@@ -16,9 +16,9 @@
     * JWT-DECODE
 		  	npm i jwt-decode
     * Knex
-				npm i knex
-		* Connect-session-knex
-				npm i connect-session-knex
+			npm i knex
+	* Connect-session-knex
+			npm i connect-session-knex
     * Postgres
 		  	brew install postgres
 
@@ -26,7 +26,7 @@
 		* Cross-env
 				npm i cross-env
 		* Nodemon
-			  npm i nodemon
+			  	npm i nodemon
 		* ESLint
 				npm i eslint
 		* Jest
@@ -49,8 +49,8 @@
 	http://localhost:3000/api/
   	http://localhost:5500/api/auth/register
   	http://localhost:5500/api/auth/login
-  	http://localhost:5500/api/auth/logout  ** pending
-  	http://localhost:5500/api/recipes      ** pending
+  	http://localhost:5500/api/auth/logout  ** switched to pg for development
+  	http://localhost:5500/api/recipes      ** switched to pg for development
 
 ## Endpoints (Production) // Heroku
 	https://secret-recipes-4.herokuapp.com/api/auth/register
