@@ -14,83 +14,26 @@ const categories = [
 ]
 
 const recipes = [
-  { recipe_title: 'Meatless Spaghetti', recipe_source: "Nanna", user_id: 1, category_id: 3 },
-  { recipe_title: 'French Toast', recipe_source: "Aunt Mabel", user_id: 1, category_id: 1 },
-  { recipe_title: 'Simple Shortbread', recipe_source: "Aunt Jen", user_id: 2, category_id: 5 },
-  { recipe_title: 'Chicken Stir Fry', recipe_source: "Granpa Ben", user_id: 2, category_id: 7 }
-]
-
-const instructions = [
-  { recipe_id: 1, instruction_number: 1, instruction_text: '1. Simmer tomato sauce or pasta sauce over medium-low heat' }, // instruction_id: 1
-  { recipe_id: 1, instruction_number: 2, instruction_text: '2. While sauce is simmering, chop fresh tomatoes and add to sauce, along with italian seasoning or oregano and minced garlic; salt and pepper to taste.' }, // instruction_id: 2
-  { recipe_id: 1, instruction_number: 3, instruction_text: '3. Boil pasta to desired firmness.' }, // instruction_id: 3
-  { recipe_id: 1, instruction_number: 4, instruction_text: '4. Serve sauce over pasta and add parmesan cheese if desired.' }, // instruction_id: 4
-  { recipe_id: 2, instruction_number: 1, instruction_text: '1. Whisk eggs, sugar and cinnamon in a medium bowl' }, // instruction_id: 5
-  { recipe_id: 2, instruction_number: 2, instruction_text: '2. Dip bread slices in the egg mixture.' }, // instruction_id: 6
-  { recipe_id: 2, instruction_number: 3, instruction_text: '3. Cook in pan over medium-high heat until egg wash is cooked through.' }, // instruction_id: 7
-  { recipe_id: 2, instruction_number: 4, instruction_text: '4. Serve with butter, syrup or fresh fruit' }, // instruction_id: 8
-  { recipe_id: 3, instruction_number: 1, instruction_text: '1. Preheat oven to 350 degrees F.' }, // instruction_id: 9
-  { recipe_id: 3, instruction_number: 2, instruction_text: '2. In a large bowl, mix together the flour, baking powder, baking soda, salt and sugar.' }, // instruction_id: 10
-  { recipe_id: 3, instruction_number: 3, instruction_text: '3. In a large bowl, beat together the butter, brown sugar, eggs and vanilla until smooth.' }, // instruction_id: 11
-  { recipe_id: 3, instruction_number: 4, instruction_text: '4. Add dry ingredients to wet ingredients and stir to combine.' }, // instruction_id: 12
-  { recipe_id: 3, instruction_number: 5, instruction_text: '5. Pour batter into ungreased pans.' }, // instruction_id: 13
-  { recipe_id: 3, instruction_number: 6, instruction_text: '6. Bake in preheated oven for about 10 minutes or until a toothpick inserted in the center comes out clean.' }, // instruction_id: 14
-  { recipe_id: 4, instruction_number: 1, instruction_text: '1. Preheat oiled skillet or wok over medium-high heat.' }, // instruction_id: 15
-  { recipe_id: 4, instruction_number: 2, instruction_text: '2. Add chicken and cook until golden brown, about 5 minutes.' }, // instruction_id: 16
-  { recipe_id: 4, instruction_number: 3, instruction_text: '3. Add vegetables and cook until tender, about 5 minutes.' }, // instruction_id: 17
-  { recipe_id: 4, instruction_number: 4, instruction_text: '4. Serve with rice or  beans.' } // instruction_id: 18
-
-]
-
-const ingredients = [
-  { ingredient_name: 'tomato sauce' },
-  { ingredient_name: 'fresh tomatoes, italian seasoning or minced garlic and oregano' },
-  { ingredient_name: 'pasta' },
-  { ingredient_name: 'eggs' },
-  { ingredient_name: 'sugar' },
-  { ingredient_name: 'cinnamon' },
-  { ingredient_name: 'bread' }, // ingredients_id: 7
-  { ingredient_name: 'flour' }, // ingredient_id: 8
-  { ingredient_name: 'baking powder' }, // ingredient_id: 9
-  { ingredient_name: 'baking soda' }, // ingredient_id: 10
-  { ingredient_name: 'salt' },  // ingredient_id: 11
-  { ingredient_name: 'sugar' }, // ingredient_id: 12
-  { ingredient_name: 'butter' }, // ingredient_id: 13
-  { ingredient_name: 'brown sugar' }, // ingredient_id: 14
-  { ingredient_name: 'eggs' }, // ingredient_id: 15
-  { ingredient_name: 'vanilla extract' }, // ingredient_id: 16
-  { ingredient_name: 'cooking oil' }, // ingredient_id: 17
-  { ingredient_name: 'chicken' }, // ingredient_id: 18
-  { ingredient_name: 'stir-fry vegetable mix' }, // ingredient_id: 19
-]
-
-const instruction_ingredients = [
-  { instruction_id: 1, ingredient_id: 1 , quantity: '0.5 cup' },
-  { instruction_id: 2, ingredient_id: 2 , quantity: '0.5 cup' },
-  { instruction_id: 3, ingredient_id: 3 , quantity: '20 oz' },
-  { instruction_id: 5, ingredient_id: 4 , quantity: '2' },
-  { instruction_id: 5, ingredient_id: 5 , quantity: '0.5 cup' },
-  { instruction_id: 5, ingredient_id: 6 , quantity: '0.5 tbsp' },
-  { instruction_id: 6, ingredient_id: 7 , quantity: '4 slices' },
-  { instruction_id: 10, ingredient_id: 8 , quantity: '4 cup' },
-  { instruction_id: 10, ingredient_id: 9 , quantity: '0.5 tsp' },
-  { instruction_id: 10, ingredient_id: 10 , quantity: '0.5 tsp' },
-  { instruction_id: 10, ingredient_id: 11 , quantity: '0.5 tsp' },  
-  { instruction_id: 10, ingredient_id: 12 , quantity: '0.5 cup' },
-  { instruction_id: 11, ingredient_id: 13 , quantity: '6 tbsp' },
-  { instruction_id: 11, ingredient_id: 14 , quantity: '0.5 cup' },
-  { instruction_id: 11, ingredient_id: 15 , quantity: '4' },
-  { instruction_id: 11, ingredient_id: 16 , quantity: '0.5 tsp' },
-  { instruction_id: 15, ingredient_id: 17 , quantity: '4 tbsp' },
-  { instruction_id: 16, ingredient_id: 18 , quantity: '1 lb' },
-  { instruction_id: 17, ingredient_id: 19 , quantity: '2 cups' },
+  { recipe_title: 'Meatless Spaghetti', recipe_source: "Nanna", image: "https://iwashyoudry.com/wp-content/uploads/2020/03/Homemade-Marinara-Sauce-3-500x500.jpg", user_id: 1, category_id: 3, 
+  instructions: '1. Simmer tomato sauce or pasta sauce over medium-low heat, 2. While sauce is simmering, chop fresh tomatoes and add to sauce, along with italian seasoning or oregano and minced garlic; salt and pepper to taste, 3. Boil pasta to desired firmness, 4. Serve sauce over pasta and add parmesan cheese if desired.',
+  ingredients: '1 tablespoon olive oil, 1/2 teaspoon garlic powder, 1/2 teaspoon dried oregano, 1/2 teaspoon dried basil, 1/2 teaspoon dried parsley, 1/2 teaspoon salt, 1/2 teaspoon pepper, 1 pound spaghetti, 1 pound fresh tomatoes, 1/2 cup parmesan cheese, 1/2 cup fresh basil, 1/2 cup fresh parsley, 1/2 cup tomato sauce, 1/2 cup pasta sauce, 1/2 cup italian seasoning, 1/2 cup parmesan cheese'
+  },
+  { recipe_title: 'French Toast', recipe_source: "Aunt Mabel",         image: "https://tastesbetterfromscratch.com/wp-content/uploads/2018/04/French-Toast-4-500x375.jpg", user_id: 1, category_id: 1,
+  instructions: '1. Whisk eggs, sugar and cinnamon in a medium bowl, 2. Dip bread slices in the egg mixture, 3. Cook in pan over medium-high heat until egg wash is cooked through, 4. Serve with butter, syrup or fresh fruit',
+  ingredients: '2 eggs, 1/2 cup sugar, 2 tbsp cinnamon, 4 slices of bread',
+  },
+  { recipe_title: 'Simple Pound Cake', recipe_source: "Aunt Jen", image: "https://www.onceuponachef.com/images/2018/01/Pound-Cake_.jpg", user_id: 2, category_id: 5, 
+  instructions: 'Preheat oven to 350 degrees F. Line a baking sheet with parchment paper. In a medium bowl, whisk together the flour, baking soda, baking powder, and salt. In a separate bowl, whisk together the butter, brown sugar, and vanilla. Add the dry ingredients to the wet ingredients and whisk until combined. Stir in the eggs one at a time, mixing until each egg is incorporated. Stir in the milk and vanilla. Pour the batter into the prepared baking sheet. Bake in the preheated oven until a toothpick inserted in the center comes out clean, about 30 minutes. Cool on a wire rack. Store in an airtight container for up to 1 month.',
+  ingredients: '1 cup all-purpose flour, 1/2 teaspoon baking soda, 1/2 teaspoon baking powder, 1/2 teaspoon salt, 1 cup unsalted butter, 1 cup granulated sugar, 1 tsp vanilla extract, 2 large eggs, 1 cup whole milk, 1 tsp vanilla extract',
+  },
+  { recipe_title: 'Chicken Stir Fry', recipe_source: "Granpa Ben", image: "https://www.wellplated.com/wp-content/uploads/2019/07/Ginger-Teriyaki-Chicken-Stir-Fry.jpg", user_id: 2, category_id: 7, 
+  instructions: 'Preheat oiled skillet or wok over medium-high heat. Add chicken and cook until golden brown, about 5 minutes. Add vegetables and cook until tender, about 5 minutes. Server with rice.',
+  ingredients: '2 tbsp cooking oil, 1 lb chicken, 2 cups stir-fry vegetables, 2 cups rice.'
+  }
 ]
 
 exports.seed = async function(knex) {
   await knex('users').insert(users);
   await knex('categories').insert(categories);
   await knex('recipes').insert(recipes);
-  await knex('instructions').insert(instructions);
-  await knex('ingredients').insert(ingredients);
-  await knex('instruction_ingredients').insert(instruction_ingredients);  
 };
