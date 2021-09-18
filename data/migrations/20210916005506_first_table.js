@@ -49,7 +49,7 @@ exports.up = async function(knex) {
     })
     .createTable('instruction_ingredients', tbl => {
       tbl.increments('instruction_ingredient_id');
-      tbl.float('quantity', 128).notNullable();
+      tbl.string('quantity', 128).notNullable();
       tbl.integer('instruction_id')
         .unsigned()
         .notNullable()

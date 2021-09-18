@@ -1,6 +1,6 @@
 const users = [
   { username: 'Jake', password: 'pw12345' },
-  { username: 'Melissa', password: 'pw12345' },
+  { username: 'Melissa', password: 'pwabc' },
 ]
 
 const categories = [ 
@@ -65,22 +65,22 @@ const ingredients = [
 ]
 
 const instruction_ingredients = [
-  { instruction_id: 1, ingredient_id: 1 , quantity: '1/2 cup' },
-  { instruction_id: 2, ingredient_id: 2 , quantity: '1/2 cup' },
+  { instruction_id: 1, ingredient_id: 1 , quantity: '0.5 cup' },
+  { instruction_id: 2, ingredient_id: 2 , quantity: '0.5 cup' },
   { instruction_id: 3, ingredient_id: 3 , quantity: '20 oz' },
   { instruction_id: 5, ingredient_id: 4 , quantity: '2' },
-  { instruction_id: 5, ingredient_id: 5 , quantity: '1/2 cup' },
-  { instruction_id: 5, ingredient_id: 6 , quantity: '1/2 tbsp' },
+  { instruction_id: 5, ingredient_id: 5 , quantity: '0.5 cup' },
+  { instruction_id: 5, ingredient_id: 6 , quantity: '0.5 tbsp' },
   { instruction_id: 6, ingredient_id: 7 , quantity: '4 slices' },
-  { instruction_id: 10, ingredient_id: 8 , quantity: '22 cup' },
-  { instruction_id: 10, ingredient_id: 9 , quantity: '1/2 tsp' },
-  { instruction_id: 10, ingredient_id: 10 , quantity: '1/2 tsp' },
-  { instruction_id: 10, ingredient_id: 11 , quantity: '1/2 tsp' },  
-  { instruction_id: 10, ingredient_id: 12 , quantity: '1/2 cup' },
+  { instruction_id: 10, ingredient_id: 8 , quantity: '4 cup' },
+  { instruction_id: 10, ingredient_id: 9 , quantity: '0.5 tsp' },
+  { instruction_id: 10, ingredient_id: 10 , quantity: '0.5 tsp' },
+  { instruction_id: 10, ingredient_id: 11 , quantity: '0.5 tsp' },  
+  { instruction_id: 10, ingredient_id: 12 , quantity: '0.5 cup' },
   { instruction_id: 11, ingredient_id: 13 , quantity: '6 tbsp' },
-  { instruction_id: 11, ingredient_id: 14 , quantity: '1/2 cup' },
+  { instruction_id: 11, ingredient_id: 14 , quantity: '0.5 cup' },
   { instruction_id: 11, ingredient_id: 15 , quantity: '4' },
-  { instruction_id: 11, ingredient_id: 16 , quantity: '1/2 tsp' },
+  { instruction_id: 11, ingredient_id: 16 , quantity: '0.5 tsp' },
   { instruction_id: 15, ingredient_id: 17 , quantity: '4 tbsp' },
   { instruction_id: 16, ingredient_id: 18 , quantity: '1 lb' },
   { instruction_id: 17, ingredient_id: 19 , quantity: '2 cups' },
