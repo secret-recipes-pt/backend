@@ -1,3 +1,4 @@
+//build recipe router here
 const router = require('express').Router();
 const Recipe = require('./recipe-model.js');
 const { restricted, checkRecipeId, checkPayload, } = require('../recipe/recipe-middleware.js');
@@ -32,6 +33,7 @@ router.post('/', restricted, checkPayload, async (req, res, next) => {
   try {
     const newRecipe = await Recipe.add(req.body);
     newRecipe.user_id = req.params.user_id;
+    // const recipe = await Recipe.add(req.body);
     res.status(201).json(newRecipe);
   } catch (err) {
     next(err);
