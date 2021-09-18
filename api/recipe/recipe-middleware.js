@@ -39,7 +39,7 @@ const checkPayload = (req, res, next) =>{
 const restricted = (req, res, next) =>{
     const token = req.headers.authorization
     if (!token){
-        res.staus(401).json({message: "Token required"})
+        res.status(401).json({message: "Token required"})
     } 
     else{
         jwt.verify(token, JWT_SECRET, (err, decoded) =>{
