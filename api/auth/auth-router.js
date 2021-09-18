@@ -56,8 +56,7 @@ router.post('/logout', async (req, res, next) => {
     // const user = await Auth.findById(req.params.user_id);
     const token = req.headers.authorization;
     const decoded = jwt.verify(token, JWT_SECRET);
-    const user = await Auth.findById(decoded.subject);
-    // user.tokens = user.tokens.filter(token => token.token !== decoded.token);
+    const user = await Auth.findById(decoded.subject.user_id);
 
     user.token = null;
     await user.save();

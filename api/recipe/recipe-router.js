@@ -16,8 +16,8 @@ router.get('/', restricted, (req, res) => {
   });
 });
 
-router.get('/:id', restricted, checkRecipeId, (req, res) => {
-  Recipe.findById(req.params.id)
+router.get('/:recipe_id', restricted, checkRecipeId, (req, res) => {
+  Recipe.findById(req.params.recipe_id)
     .then(recipe => {
       res.status(200).json(recipe);
     })
@@ -75,7 +75,7 @@ router.put('/:recipe_id', restricted, checkRecipeId, checkPayload, (req, res) =>
 });
 
 router.delete('/:recipe_id', restricted, checkRecipeId, (req, res) => {
-  Recipe.remove(req.params.id)
+  Recipe.remove(req.params.recipe_id)
     .then(deleted => {
       res.status(200).json(deleted);
     })
