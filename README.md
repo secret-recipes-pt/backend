@@ -1,9 +1,9 @@
 # backend
 
 ## Dependencies
-	  * Bcryptjs
+	* Bcryptjs
       	npm i bcryptjs
-		* CORS
+	* CORS
 		  	npm i cors
     * DOTENV
 		  	npm i dotenv
