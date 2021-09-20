@@ -33,22 +33,27 @@ router.post('/register', checkPayload, checkUsernameUnique, (req, res, next) => 
     .catch(next);
 });
 
-router.post('/login', checkPayload, checkLoginPayload, (req, res, next) => {
-  let verifiedUser = bcrypt.compareSync(req.body.password, req.userData.password);
+router.post('/login', checkPayload, checkLoginPayload, async (req, res, next) => {
+  try {
+    const user = await Auth.findBy({ username: req.body.username });
+    let verifiedUser = bcrypt.compareSync(req.body.password, req.userData.password);
 
   if (verifiedUser) {
-    const userObject = req.body;
     const token = generateToken(req.userData);
     res.status(200).json({
       message: `Welcome ${req.userData.username}!`,
       token,
-      user: userObject
+      username: user.username,
+      user_id: user.user_id
     });
     next();
   } else {
     res.status(401).json({ 
       message: 'Invalid Credentials' 
     });
+  }
+  } catch (error) {
+    next(error);
   }
 });
 
