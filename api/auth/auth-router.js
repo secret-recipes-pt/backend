@@ -67,7 +67,7 @@ router.post('/logout', async (req, res, next) => {
     }
   } catch (error) {
     next(error);
-  }
+  } 
 });  
 
 function generateToken(user) {
