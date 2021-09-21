@@ -5,15 +5,15 @@ function find() {
 }
 
 function findBy(filter) {
-  console.log(filter);
-  console.log("in the findBy model")
+  // console.log(filter);
+  // console.log("in the findBy model")
   return db('users')
     .where(filter)
     .first();
 }
 
 function findById(user_id) {
-  console.log("in the model findById", user_id);
+  // console.log("in the model findById", user_id);
   return db('users')
     .where({ user_id })
     .first();
@@ -21,7 +21,7 @@ function findById(user_id) {
 
 async function add(user) {
   const [id] = await db('users').insert(user, 'user_id');
-  console.log(id);
+  // console.log(id);
   return findById(id);
 }
 
