@@ -54,7 +54,6 @@ describe('Auth Model for users', () => {
     it('should return a user by their id', async () => {
       let user
       await db('users').insert({user_id: 1, ...gordon})
-      console.log(gordon)
       user = await Auth.findById(1)
       expect(user.username).toBe('gordon')
     });
