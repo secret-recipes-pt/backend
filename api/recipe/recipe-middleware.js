@@ -30,6 +30,12 @@ const checkPayload = (req, res, next) =>{
     else if (!recipe.recipe_source){
         res.status(400).json({message: "source required"});
     }
+    else if (!recipe.ingredients){
+        res.status(400).json({message: "ingredients required"});
+    }
+    else if (!recipe.instructions){
+        res.status(400).json({message: "instructions required"});
+    }
     else{
         next();
     }
