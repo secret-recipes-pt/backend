@@ -119,11 +119,11 @@ describe('RECIPE endpoints', ()=>{
       const login = await request(server).post('/api/auth/login').send(gordon);
       let res = await request(server).post('/api/recipes').send({
         recipe_id: 5,     
-	      recipe_source: 'source_2', 
+        recipe_source: 'source_2', 
         ingredients: 'onions',    
-	      instructions: 'chop onions',     
-	      user_id: 1,      
-	      category_id: 1,
+        instructions: 'chop onions',     
+        user_id: 1,      
+        category_id: 1,
       }).set('Authorization', login.body.token)
       expect(res.body.message).toMatch(/title required/i)
 
@@ -131,9 +131,9 @@ describe('RECIPE endpoints', ()=>{
         recipe_id: 5,
         recipe_title: 'title_1',      
         ingredients: 'onions',    
-	      instructions: 'chop onions',     
-	      user_id: 1,      
-	      category_id: 1,
+         instructions: 'chop onions',     
+        user_id: 1,      
+        category_id: 1,
       }).set('Authorization', login.body.token)
       expect(res.body.message).toMatch(/source required/i)
 
@@ -141,9 +141,9 @@ describe('RECIPE endpoints', ()=>{
         recipe_id: 5,
         recipe_title: 'title_1',
         recipe_source: 'source_2',          
-	      instructions: 'chop onions',     
-	      user_id: 1,      
-	      category_id: 1,
+         instructions: 'chop onions',     
+        user_id: 1,      
+        category_id: 1,
       }).set('Authorization', login.body.token)
       expect(res.body.message).toMatch(/ingredients required/i)
 
@@ -152,8 +152,8 @@ describe('RECIPE endpoints', ()=>{
         recipe_title: 'title_1', 
         recipe_source: 'source_2',     
         ingredients: 'onions',         
-	      user_id: 1,      
-	      category_id: 1,
+        user_id: 1,      
+        category_id: 1,
       }).set('Authorization', login.body.token)
       expect(res.body.message).toMatch(/instructions required/i)
 
