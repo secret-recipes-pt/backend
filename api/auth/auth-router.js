@@ -10,6 +10,12 @@ const {
   checkLoginPayload,
 } = require('./auth-middleware.js');
 
+router.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://frontend-lovat-sigma.vercel.app", "http://localhost:3000");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // GET /api/auth/users - get all users in database, used to test GET and to verify users are being added to database correctly -- will only work if user is authorized and token is valid
 router.get('/', restricted, (req, res, next) => {
   Auth.find()
