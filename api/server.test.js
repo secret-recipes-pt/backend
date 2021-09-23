@@ -87,17 +87,19 @@ describe('RECIPE endpoints', ()=>{
     })
     test('should return status 200 if token valid', async () =>{
       await request(server).post('/api/auth/register').send(gordon);
-      let res = await request(server).post('/api/auth/login').send(gordon);
-      res = await request(server).get('/api/recipes').set('Authorization', res.body.token)
-      expect(res.status).toBe(200)
+      const login = await request(server).post('/api/auth/login').send(gordon);
+      const res = await request(server).get('/api/recipes').set('Authorization', login.body.token);
+      expect(res.status).toBe(200);
     })
   });
   describe('[GET] /recipes/:id', ()=>{
-    test('should return staus 404 on invaild id(checkRecipeId)', async () =>{
+    test('should return staus 404 on invalid id(checkRecipeId)', async () =>{
       await request(server).post('/api/auth/register').send(gordon);
       const login = await request(server).post('/api/auth/login').send(gordon);
-      const res = await request(server).get('/api/recipes/6').set('Authorization', login.body.token)
+      const res = await request(server).get('/api/recipes/9').set('Authorization', login.body.token);
+      // const recipe_id = 9;
       expect(res.status).toBe(404)
+      // expect(res.body).toMatchObject({message: `Recipe with id ${recipe_id} not found`});
     })
     test('should return status 200 on valid id', async () =>{
       await request(server).post('/api/auth/register').send(gordon);
@@ -111,7 +113,9 @@ describe('RECIPE endpoints', ()=>{
     test('should return status 201', async () =>{
       await request(server).post('/api/auth/register').send(gordon);
       const login = await request(server).post('/api/auth/login').send(gordon);
-      const res = await request(server).post('/api/recipes').send(recipe_1).set('Authorization', login.body.token)
+      let res = await request(server).post('/api/recipes').send(recipe_1).set('Authorization', login.body.token)
+      // console.log(login.body.user_id)
+      // console.log(res.status)
       expect(res.status).toBe(201)
     })
     test('should return proper message when required field is missing', async () =>{
@@ -146,7 +150,7 @@ describe('RECIPE endpoints', ()=>{
         category_id: 1,
       }).set('Authorization', login.body.token)
       expect(res.body.message).toMatch(/ingredients required/i)
-
+      
       res = await request(server).post('/api/recipes').send({
         recipe_id: 5,
         recipe_title: 'title_1', 
@@ -173,8 +177,10 @@ describe('RECIPE endpoints', ()=>{
       await request(server).post('/api/auth/register').send(gordon);
       const login = await request(server).post('/api/auth/login').send(gordon);
       await request(server).post('/api/recipes').send(recipe_1).set('Authorization', login.body.token)
-      const res = await request(server).delete('/api/recipes/5').set('Authorization', login.body.token)
-      expect(res.body.message).toMatch(/deleted/i)
+      const res = await request(server).delete('/api/recipes/5').send(recipe_1).set('Authorization', login.body.token)
+      // expect(res.body.message).toMatch(/deleted/i)
+      expect(res.status).toBe(200);
+      // expect(res.body).toHaveLength(0);
     });
   });
 });
