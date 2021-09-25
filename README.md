@@ -61,7 +61,7 @@
 
 ## URL for Deployed Front End React App (Production) // Vercel
 ### Includes Styling with MUI, Material UI, Material UI Icons and CSS
-	https://secret-recipes-4.vercel.app/
+	https://frontend-lovat-sigma.vercel.app
 
 ## CRUD Operations
 
